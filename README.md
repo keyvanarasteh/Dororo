@@ -10,4 +10,4 @@ Flutter UX**TeamWork**
 
 # Screenshots
 
-![Alt text](../../../../flutterProje%C4%B0mage.png)
+![Alt text](lib/image/flutterProje%C4%B0mage.png)
