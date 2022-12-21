@@ -1,5 +1,5 @@
 
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, unused_import
+// ignore_for_file: unused_import
 
 import 'package:dororo/Urun.dart';
 import 'package:dororo/UrunDetay.dart';
@@ -7,8 +7,9 @@ import 'package:dororo/anasayfa/Anasayfa.dart';
 import 'package:dororo/giris.dart';
 import 'package:dororo/sepet.dart';
 import 'package:flutter/material.dart';
+
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,18 +22,13 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-    
-    );
+    return Scaffold();
   }
 }
