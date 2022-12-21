@@ -27,7 +27,7 @@ class _girisState extends State<giris> {
           children: [
             Positioned(
 
-              child: Image.asset('lib/image/hardware3.png',fit: BoxFit.scaleDown,),
+              child: Image.asset('lib/image/Hardware/hardware3.png',fit: BoxFit.scaleDown,),
               ),
 
             Positioned(
