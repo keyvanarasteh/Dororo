@@ -15,7 +15,7 @@ class _anasayfaState extends State<anasayfa> {
   @override
   Widget build(BuildContext context) {
  
-    
+  
     return Scaffold(
       appBar: AppBar(
         backgroundColor:  Colors.brown[400],
@@ -69,13 +69,16 @@ class Kategori extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
+      var screenwidth = MediaQuery.of(context).size.width ;
+    var screenheight = MediaQuery.of(context).size.height ;
     return InkWell(
       onTap: () => Navigator.push(context,
               MaterialPageRoute(builder: (context) => Urun(ad: "$ad", r: ad=='Anahtar' ? 0 : ad=='Çekiç'? 2 : ad=='Tornavida'? 5 :ad=='Matkap'? 3 :ad=='Çivi,Vida'? 1 : 4 , renkkk: renk, )),),
       child: Column(
         children: [
           Container(
+            height: screenheight/5,
+            width: screenwidth/4,
             margin: EdgeInsets.all(20),
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -91,7 +94,7 @@ class Kategori extends StatelessWidget {
           ),
           Text(
             '$ad',
-            style: TextStyle( color: Colors.black, fontSize: 25, ),
+            style: TextStyle( color: Colors.black, fontSize: screenwidth/20, ),
           ),
               
         ],

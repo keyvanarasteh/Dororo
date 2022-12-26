@@ -1,4 +1,8 @@
-  final List<String> Anahtar1 = ["anahtar1.png","anahtar2.png","anahtar3.png","civi1.png",
+  // ignore_for_file: non_constant_identifier_names, unused_import
+
+  import 'package:flutter/material.dart';
+
+final List<String> Anahtar1 = ["anahtar1.png","anahtar2.png","anahtar3.png","civi1.png",
   "civi2.png","civi3.jpg","cekic1.jpg","cekic2.jpg","cekic3.jpg","matkap1.png","matkap2.png",
   "matkap3.png","pense1.png","pense2.png","pense3.png","tornavida1.png","tornavida2.png",
   "tornavida3.png"];
@@ -16,3 +20,5 @@
 
   Set<String> sepett = {};
   List<int> adet = [];
+
+

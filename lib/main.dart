@@ -1,5 +1,5 @@
 
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:dororo/Urun.dart';
 import 'package:dororo/UrunDetay.dart';
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: sepet()
+      home: sepet(a: 0,s: 0,)
     );
   }
 }
