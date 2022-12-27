@@ -21,4 +21,6 @@ final List<String> Anahtar1 = ["anahtar1.png","anahtar2.png","anahtar3.png","civ
   Set<String> sepett = {};
   List<int> adet = [];
 
+Set<String> Kullanici_adi = {};
+Set<String> Sifte= {};
 
