@@ -25,7 +25,7 @@ class _UrunState extends State<Urun> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.grey),
       body: ListView(
         children:  
             [Column(
@@ -72,9 +72,9 @@ class _UrunState extends State<Urun> {
                   Text("$miniaciklama", maxLines: 4 ,  ),
                   Wrap(crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      Container(height: 30,width: 70,alignment: Alignment.center, child: Text("$fiyat \$"),decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 2, color: Colors.black), color: Colors.white),),
+                      Container(height: 30,width: 70,alignment: Alignment.center, child: Text("$fiyat TL"),decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 2, color: Colors.black), color: Colors.white),),
                       SizedBox(width: screenwidth/10,),
-                      InkWell(onTap: () {  Navigator.push(context,MaterialPageRoute(builder:(context) =>  sepet(s: s, a: a)) );sepett.add(image);adet.add(1);},
+                      InkWell(onTap: () { sepett.add(image);adet.add(1);},
                       child: Container(width: 40,height: 40, decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 2, color: Colors.black), color: Colors.white),child: Icon(Icons.shopping_basket_rounded))),
                     ],
                   ),

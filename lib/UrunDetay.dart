@@ -26,7 +26,7 @@ class _DetayState extends State<Detay> {
     var screenwidth = MediaQuery.of(context).size.width ;
     var screenheight = MediaQuery.of(context).size.height ;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.grey),
       backgroundColor: Colors.black54,
       body: ListView(
         children: 
@@ -44,27 +44,30 @@ class _DetayState extends State<Detay> {
               ),
               SizedBox(height: 20),
       
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    width: 75,
-                    height: 35,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Colors.black87),
-                    child: Center(child: Text( "$fiyat" + "\$",style: TextStyle( color: Colors.white),)),
-                  ),
-                  InkWell(onTap: () {  sepett.add(RESIM);adet.add(1);Navigator.pop(context);},
-                  child: Container(width: 40,height: 40, decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 2, color: Colors.black), color: Colors.white),child: Icon(Icons.shopping_basket_rounded))),
-                  InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: 200,
+              Container(
+                width: screenwidth/2 + 150,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: 75,
                       height: 35,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 2, color: Colors.black), color: Colors.white38),
-                      child: Center(child: Text("Puan Ver",style: TextStyle( color: Colors.black, ),)),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Colors.black87),
+                      child: Center(child: Text( "$fiyat" + "\$",style: TextStyle( color: Colors.white),)),
                     ),
-                  ),
-                ],
+                    InkWell(onTap: () {  sepett.add(RESIM);adet.add(1);Navigator.pop(context);},
+                    child: Container(width: 40,height: 40, decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 2, color: Colors.black), color: Colors.white),child: Icon(Icons.shopping_basket_rounded))),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: 200,
+                        height: 35,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 2, color: Colors.black), color: Colors.white38),
+                        child: Center(child: Text("Puan Ver",style: TextStyle( color: Colors.black, ),)),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(height: 20),
               Container(

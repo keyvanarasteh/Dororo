@@ -56,6 +56,7 @@ class _sepetState extends State<sepet> {
       :
       Container(
         child: ListView(
+
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,30 +71,37 @@ class _sepetState extends State<sepet> {
             
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Wrap(
-                children: 
-                  [Row(
-                    children: [
-                      Container(width: 150,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),border: Border.all(width: 2, color: Colors.black)),
-                        child: Row(mainAxisSize: MainAxisSize.min,
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),border: Border.all(width: 2, color: Colors.black)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(toplam.toString(),  style: TextStyle( fontSize: 30)),
+                          Text("TL",style: TextStyle( fontSize: 25))
+                        ],
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),border: Border.all(width: 2, color: Colors.black)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
                           children: [
-                            Text(toplam.toString(),  style: TextStyle( fontSize: 30)),
-                            Text("TL",style: TextStyle( fontSize: 25))
+                            Text("Sepeti Onayla",style: TextStyle( fontSize: 20)),
+                            Icon(Icons.shopping_bag_outlined),
                           ],
                         ),
                       ),
-                      InkWell(
-                        onTap: () {
-                          
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),border: Border.all(width: 2, color: Colors.black)),
-                          child: Text("Sepeti Onayla"),
-                          ),
-                      )
-                    ],
-                  ),
+                      ),
+                  )
                 ],
               ),
             ),
@@ -126,7 +134,7 @@ class _sepetState extends State<sepet> {
               Image.asset("lib/image/tools/$item", ),
               Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(Anahtar3[ Anahtar1.toList().indexOf('$item')], style: TextStyle(fontSize: 17), maxLines: 20, overflow: TextOverflow.ellipsis),
+                  Text(Anahtar3[ Anahtar1.toList().indexOf('$item')], style: TextStyle(fontSize: 17),maxLines: 4,),
                   Text(f.toString() ,style: TextStyle(fontSize: 15)),
                   
                 ],
