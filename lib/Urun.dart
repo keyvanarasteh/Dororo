@@ -228,10 +228,34 @@ class Urunn extends StatelessWidget {
                   SizedBox(
                     width: screenwidth / 10,
                   ),
+                  
                   InkWell(
                       onTap: () {
                         sepett.add(image);
                         adet.add(1);
+                          
+                          Widget continueButton = TextButton(
+                            child: Text("Continue"),
+                            onPressed:  () {
+                              Navigator.pop(context);
+                            },
+                          );
+                        AlertDialog alert = AlertDialog(
+                          content: Text("Ürün Sepete Eklendi.."),
+                          actions: [
+                              
+                              continueButton,
+                            
+                          ],
+                        );
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return alert;
+                            },
+                          );
+                        
+                        
                       },
                       child: Container(
                           width: 40,

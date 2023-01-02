@@ -55,7 +55,35 @@ class _DetayState extends State<Detay> {
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Colors.black87),
                       child: Center(child: Text( "$fiyat" + "\$",style: TextStyle( color: Colors.white),)),
                     ),
-                    InkWell(onTap: () {  sepett.add(RESIM);adet.add(1);Navigator.pop(context);},
+                    InkWell(
+                      onTap: () {
+                        sepett.add(RESIM);
+                        adet.add(1);
+                          
+                          Widget continueButton = TextButton(
+                            child: Text("Continue"),
+                            onPressed:  () {
+                              Navigator.pop(context);
+                            },
+                          );
+                        AlertDialog alert = AlertDialog(
+                          content: Text("Ürün Sepete Eklendi.."),
+                          actions: [
+                              
+                              continueButton,
+                            
+                          ],
+                        );
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return alert;
+                            },
+                          );
+                        
+                        
+                      },
+                  
                     child: Container(width: 40,height: 40, decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 2, color: Colors.black), color: Colors.white),child: Icon(Icons.shopping_basket_rounded))),
                     InkWell(
                       onTap: () {},

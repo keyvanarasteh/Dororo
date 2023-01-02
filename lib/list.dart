@@ -11,7 +11,7 @@ final List<String> Anahtar1 = ["anahtar1.png","anahtar2.png","anahtar3.png","civ
    1150.00,1330.00,1299.99,50.00,45.00,300.00,499.99,199.99,99.99];
 
   final List<String> Anahtar3 = ["25'li Anahtar Takımı","Tüm Somonlara Uyan Anahtar",
-  "Tüm Somonlara Uyan Anahatar Plastik Saplı","400 gr , 5cm uzunluğunda çivi",
+  "Tüm Somonlara Uyan Anahatar Saplı","400 gr , 5cm uzunluğunda çivi",
   "400 gr , 2cm uzunğunda mini vida ","400 gr, 6cm uzunluğunda vida ","Çelik Diydoctor Marka Kaymaz Saplı Çekiç",
   "Striker Kaymaz Saplı Çekiç","Fayanslar İçin Ağır Plastik Çekiç","Müller Marka Matkap Seti",
   "Lieber German Marka Matkap Seti","Graızer Marka Matkap Seti","İzeltas Marka Pense","3'lü Pense Seti ",

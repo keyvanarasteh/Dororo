@@ -82,7 +82,7 @@ class _sepetState extends State<sepet> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Text(toplam.toString(),
+                                    Text(toplam.ceil().toString(),
                                         style: TextStyle(fontSize: 30)),
                                     Text("TL", style: TextStyle(fontSize: 25))
                                   ],

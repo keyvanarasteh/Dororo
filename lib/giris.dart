@@ -12,7 +12,7 @@ class giris extends StatefulWidget {
 }
 
 class _girisState extends State<giris> {
-  bool select1 = false;
+  bool select1 = true;
   bool select2 = false;
 
   @override
@@ -26,12 +26,13 @@ class _girisState extends State<giris> {
           height: double.infinity,
           width: double.infinity,
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
                   child: Image.asset(
                     'lib/image/Hardware/hardware3.png',
-                    fit: BoxFit.scaleDown,
+                    height: 300,
+                    width: 300,
                   ),
                 ),
                 Column(
@@ -43,31 +44,48 @@ class _girisState extends State<giris> {
                           borderRadius: BorderRadius.circular(25),
                           border: Border.all(width: 2)),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          ChoiceChip(
-                            label: Text("Giriş"),
-                            onSelected: (value) {
-                              if (value) {
-                                select2 = false;
-                              }
-                              select1 = value;
-                              setState(() {});
-                            },
-                            selectedColor: Colors.orange,
-                            selected: select1,
+                          Container(
+                            height: 200,
+                            width: 120,
+                            decoration: BoxDecoration(
+                            
+                            borderRadius: BorderRadius.circular(25),
+                            color: select1 == true ? Colors.amberAccent : Colors.transparent,),
+                            child: ChoiceChip(
+                              label: Text("Giriş"),
+                              onSelected: (value) {
+                                if (value) {
+                                  select2 = false;
+                                }
+                                select1 = value;
+                                setState(() {});
+                              },
+                              selectedColor: Colors.orangeAccent,
+                              selected: select1,
+                            ),
                           ),
-                          ChoiceChip(
-                            label: Text("Kayıt Ol"),
-                            onSelected: (value) {
-                              if (value) {
-                                select1 = false;
-                              }
-                              select2 = value;
-                              setState(() {});
-                            },
-                            selected: select2,
-                            selectedColor: Colors.orange,
+                          Container(
+                            height: 200,
+                            width: 120,
+                            decoration: BoxDecoration(
+                            
+                            borderRadius: BorderRadius.circular(25),
+                            color: select2 == true ? Colors.amberAccent : Colors.transparent,),
+                            child: ChoiceChip(
+                              label: Text("Kayıt Ol"),
+                              onSelected: (value) {
+                                if (value) {
+                                  select1 = false;
+                                }
+                                select2 = value;
+                                setState(() {});
+                              },
+                              selected: select2,
+                              selectedColor: Colors.orangeAccent,
+                              
+                            ),
                           ),
                         ],
                       ),
@@ -75,40 +93,43 @@ class _girisState extends State<giris> {
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      width: 250,
-                      child: TextField(
-                          decoration: InputDecoration(
-                        labelText: "Username ",
-                        prefixIcon: Icon(Icons.people),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            borderSide:
-                                BorderSide(width: 2, color: Colors.brown)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            borderSide:
-                                BorderSide(width: 2, color: Colors.brown)),
-                      )),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: 250,
-                      child: TextField(
-                          decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock),
-                        labelText: "Password",
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            borderSide:
-                                BorderSide(width: 2, color: Colors.brown)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            borderSide:
-                                BorderSide(width: 2, color: Colors.brown)),
-                      )),
+                    select1 == true ? Column(
+                      children: [
+                        Container(
+                          width: 250,
+                          child: input("Username",Icon(Icons.people)),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          width: 250,
+                          child:  input("Password",Icon(Icons.lock))
+                        ),
+                      ],
+                    ):
+                    Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: 250,
+                          height: 50,
+                          child: input("Username",Icon(Icons.people)),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          width: 250,height: 50,
+                          child: input("Email",Icon(Icons.mail)),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          width: 250,height: 50,
+                          child:  input("Password",Icon(Icons.lock))
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -128,5 +149,21 @@ class _girisState extends State<giris> {
                 ),
               ])),
     );
+  }
+
+  TextField input(String a, Icon b) {
+    return TextField(
+                        decoration: InputDecoration(
+                      labelText: a,
+                      prefixIcon: b,
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide:
+                              BorderSide(width: 2, color: Colors.brown)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide:
+                              BorderSide(width: 2, color: Colors.brown)),
+                    ));
   }
 }
