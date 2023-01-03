@@ -2,7 +2,7 @@
 
 import 'package:dororo/Urun.dart';
 import 'package:dororo/UrunDetay.dart';
-import 'package:dororo/anasayfa/Anasayfa.dart';
+import 'package:dororo/Anasayfa.dart';
 import 'package:dororo/giris.dart';
 import 'package:dororo/sepet.dart';
 import 'package:flutter/material.dart';

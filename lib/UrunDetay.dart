@@ -27,7 +27,7 @@ class _DetayState extends State<Detay> {
     var screenheight = MediaQuery.of(context).size.height ;
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.grey),
-      backgroundColor: Colors.black54,
+      backgroundColor: Colors.white,
       body: ListView(
         children: 
           [Column(
@@ -60,26 +60,11 @@ class _DetayState extends State<Detay> {
                         sepett.add(RESIM);
                         adet.add(1);
                           
-                          Widget continueButton = TextButton(
-                            child: Text("Continue"),
-                            onPressed:  () {
-                              Navigator.pop(context);
-                            },
+                        const snackBar = SnackBar(
+                            content: Text('Ürün Sepete Eklendi!'),
                           );
-                        AlertDialog alert = AlertDialog(
-                          content: Text("Ürün Sepete Eklendi.."),
-                          actions: [
-                              
-                              continueButton,
-                            
-                          ],
-                        );
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return alert;
-                            },
-                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        
                         
                         
                       },

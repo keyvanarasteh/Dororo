@@ -1,6 +1,6 @@
 // ignore_for_file: unused_import, sized_box_for_whitespace, prefer_const_constructors, camel_case_types, unused_local_variable, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
-import 'package:dororo/anasayfa/Anasayfa.dart';
+import 'package:dororo/Anasayfa.dart';
 import 'package:dororo/sepet.dart';
 import 'package:flutter/material.dart';
 

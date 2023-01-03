@@ -1,6 +1,6 @@
 // ignore_for_file: unused_import, camel_case_types, use_key_in_widget_constructors, no_logic_in_create_state, prefer_const_constructors_in_immutables, unused_local_variable, prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, unnecessary_string_interpolations
 
-import 'package:dororo/anasayfa/Anasayfa.dart';
+import 'package:dororo/Anasayfa.dart';
 import 'package:dororo/list.dart';
 import 'package:dororo/Urun.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +24,9 @@ class _sepetState extends State<sepet> {
     double toplam = 0;
 
     return Scaffold(
-      backgroundColor: Colors.blueGrey[400],
+      backgroundColor: Color(0XFF978587),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blueGrey[200],
+        backgroundColor: Color(0XFF6E6062),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -49,71 +49,107 @@ class _sepetState extends State<sepet> {
                   "Sepet Boş..",
                   style: TextStyle(fontSize: 25, color: Colors.blueGrey),
                 )))
-              : Container(
-                  child: ListView(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              : Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                      child: ListView(
                         children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              for (var item in sepett)
+                                sepettt(sepett.toList().indexOf('$item'), item),
+                            ],
+                          ),
+                          
                           for (var item in sepett)
-                            sepettt(sepett.toList().indexOf('$item'), item),
+                            Text(
+                                (toplam += Anahtar2[Anahtar1.indexOf(item)] *
+                                        adet[sepett.toList().indexOf(item)])
+                                    .toString(),
+                                style: TextStyle(
+                                    color: Colors.blueGrey[400], fontSize: 1)),
+                          
                         ],
                       ),
-                      Container(color: Colors.black, height: 1),
-                      for (var item in sepett)
-                        Text(
-                            (toplam += Anahtar2[Anahtar1.indexOf(item)] *
-                                    adet[sepett.toList().indexOf(item)])
-                                .toString(),
-                            style: TextStyle(
-                                color: Colors.blueGrey[400], fontSize: 1)),
+                      
+                    ),
+
+                  Column(
+                    children: [Container(color: Colors.black, height: 1),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                      width: 2, color: Colors.black)),
-                              child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Row(
-                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                                   children: [
-                                    Text(toplam.ceil().toString(),
-                                        style: TextStyle(fontSize: 30)),
-                                    Text("TL", style: TextStyle(fontSize: 25))
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                              width: 2, color: Colors.black)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text(toplam.ceil().toString(),
+                                                style: TextStyle(fontSize: 30)),
+                                            Text("TL", style: TextStyle(fontSize: 25))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        sepett.clear();
+                                        adet.clear();
+                                        toplam = 0;
+                                        setState(() {});
+                                        Widget continueButton = TextButton(
+                                          child: Text("Continue"),
+                                          onPressed:  () {
+                                            Navigator.pop(context);
+                                          },
+                                        );
+                                      AlertDialog alert = AlertDialog(
+                                        content: Text("Sepet Onaylandı..\nAlışverişiniz İçin Teşekkürler"),
+                                        actions: [
+                                            
+                                            continueButton,
+                                          
+                                        ],
+                                      );
+                                      showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return alert;
+                                          },
+                                        );
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                                width: 2, color: Colors.black)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            children: [
+                                              Text("Sepeti Onayla",
+                                                  style: TextStyle(fontSize: 20)),
+                                              Icon(Icons.shopping_bag_outlined),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    )
                                   ],
                                 ),
                               ),
-                            ),
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                        width: 2, color: Colors.black)),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: [
-                                      Text("Sepeti Onayla",
-                                          style: TextStyle(fontSize: 20)),
-                                      Icon(Icons.shopping_bag_outlined),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
                     ],
-                  ),
-                ),
+                  )
+                ],
+              ),
     );
   }
 

@@ -234,26 +234,10 @@ class Urunn extends StatelessWidget {
                         sepett.add(image);
                         adet.add(1);
                           
-                          Widget continueButton = TextButton(
-                            child: Text("Continue"),
-                            onPressed:  () {
-                              Navigator.pop(context);
-                            },
+                          const snackBar = SnackBar(
+                            content: Text('Ürün Sepete Eklendi!'),
                           );
-                        AlertDialog alert = AlertDialog(
-                          content: Text("Ürün Sepete Eklendi.."),
-                          actions: [
-                              
-                              continueButton,
-                            
-                          ],
-                        );
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return alert;
-                            },
-                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         
                         
                       },
