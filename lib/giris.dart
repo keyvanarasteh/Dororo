@@ -1,19 +1,28 @@
-// ignore_for_file: unused_import, sized_box_for_whitespace, prefer_const_constructors, camel_case_types, unused_local_variable, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
+// ignore_for_file: unused_import, sized_box_for_whitespace, prefer_const_constructors, camel_case_types, unused_local_variable, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unnecessary_string_interpolations, use_key_in_widget_constructors, depend_on_referenced_packages, prefer_interpolation_to_compose_strings
 
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 import 'package:dororo/Anasayfa.dart';
 import 'package:dororo/sepet.dart';
 import 'package:flutter/material.dart';
-
+import 'package:dororo/data.txt';
 class giris extends StatefulWidget {
   const giris({super.key});
-
+  
   @override
   State<giris> createState() => _girisState();
 }
+ 
+
+ 
 
 class _girisState extends State<giris> {
   bool select1 = true;
   bool select2 = false;
+  final myController = TextEditingController();
+  final myController2 = TextEditingController();
+  final myController3 = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -106,6 +115,8 @@ class _girisState extends State<giris> {
                           width: 250,
                           child:  input("Password",Icon(Icons.lock))
                         ),
+                        
+
                       ],
                     ):
                     Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -131,6 +142,7 @@ class _girisState extends State<giris> {
                         ),
                       ],
                     ),
+                    
                   ],
                 ),
                 Container(
@@ -141,10 +153,13 @@ class _girisState extends State<giris> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [Text("Start Shopping"), Icon(Icons.send)],
                     ),
-                    onTap: () => Navigator.push(
+                    onTap: () {Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => sepet()),
-                    ),
+                      
+                    );
+                    
+                    }
                   ),
                 ),
               ])),
@@ -153,6 +168,8 @@ class _girisState extends State<giris> {
 
   TextField input(String a, Icon b) {
     return TextField(
+                    controller: a =="Username" ? myController : a=="Email" ? myController3 : myController2,
+                      
                         decoration: InputDecoration(
                       labelText: a,
                       prefixIcon: b,

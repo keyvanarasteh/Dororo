@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, depend_on_referenced_packages, unnecessary_string_interpolations, use_key_in_widget_constructors, non_constant_identifier_names, camel_case_types, unused_import, file_names
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, depend_on_referenced_packages, unnecessary_string_interpolations, use_key_in_widget_constructors, non_constant_identifier_names, camel_case_types, unused_import, file_names, no_leading_underscores_for_local_identifiers
 import 'package:dororo/Urun.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
@@ -14,12 +15,11 @@ class _anasayfaState extends State<anasayfa> {
    final List<String> items = ["anahtar.png","cekic.png","tornavida.png","matkap.png","civi.png","pense.png"];
   @override
   Widget build(BuildContext context) {
- 
+    var screenwidth = MediaQuery.of(context).size.width;
+    var screenheight = MediaQuery.of(context).size.height;
   
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor:  Colors.brown[400],
-        title: Text("Kategori"),),
+      
       body: Container(
       width: double.infinity,
       height: double.infinity,
@@ -58,6 +58,8 @@ class _anasayfaState extends State<anasayfa> {
     );
     
   }
+  
+  
 }
 
 class Kategori extends StatelessWidget {
