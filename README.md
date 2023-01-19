@@ -22,15 +22,20 @@ Giriş Ekranı
 Kategori Ekranı
 
 ![Alt text](lib/image/f2.png)
+<br>
 Ürünlerin Bulunduğu Ekran
 
 ![Alt text](lib/image/f3.png)
+<br>
 Ürün Detay Ekranı
 
 ![Alt text](lib/image/f5.png)
+<br>
 Sepet Ekranı
 
 ![Alt text](lib/image/f6.png)
+<br>
 Ek Widget Ekranı
 
 ![Alt text](lib/image/f7.png)
+<br>
