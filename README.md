@@ -11,3 +11,6 @@ Flutter UX**TeamWork**
 # Screenshots
 
 ![Alt text](lib/image/flutterProje%C4%B0mage.png)
+
+![Alt text](lib/image/as.png)
+![Alt text](lib/image/sa.png)

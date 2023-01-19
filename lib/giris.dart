@@ -7,7 +7,6 @@ import 'package:dororo/Anasayfa.dart';
 import 'package:dororo/FinalFazlaWidgets.dart';
 import 'package:dororo/sepet.dart';
 import 'package:flutter/material.dart';
-import 'package:dororo/data.txt';
 class giris extends StatefulWidget {
   const giris({super.key});
   
